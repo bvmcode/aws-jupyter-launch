@@ -39,7 +39,7 @@ Jupyter started and is available at http://<some_ip_address>:<your_port>
 ```
 * Then go to the link `http://<some_ip_address>:<your_port>`, enter in your password from the `.env` file and you are able to get to work.
 
-![](https://raw.githubusercontent.com/pygeekr/jupyter-docker-aws/master/readme_img.png)
+![](https://raw.githubusercontent.com/bvmcode/aws-jupyter-launch/master/readme_img.png)
 
 * The code will be in the `/home/ec2-user/jupyter-docker-aws-master` directory of your instance as well as the volume containing your saved work at `/home/ec2-user/jupyter-docker-aws-master/notebooks`.
 * A python file `current_instance.py` will be generated locally which will have the instance id and the public ip address.
