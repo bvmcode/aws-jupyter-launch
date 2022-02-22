@@ -1,0 +1,5 @@
+.env
+./notebooks
+current_instance.py
+./env
+__pycache__/

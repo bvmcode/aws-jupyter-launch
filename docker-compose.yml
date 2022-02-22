@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  jupyter:
+      image: jupyter/datascience-notebook
+      restart: always
+      volumes:
+        - ./notebooks:/home/jovyan/work
+      ports:
+        - ${JUPYTER_PORT}:8888
+      user: root
+      environment:
+        JUPYTER_ENABLE_LAB: "yes"
+        JUPYTER_TOKEN: ${JUPYTER_PASSWD}
