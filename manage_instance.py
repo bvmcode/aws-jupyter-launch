@@ -51,9 +51,7 @@ class JupyterInstance:
             )
             self.sg_id = response["GroupId"]
             print(self.sg_id)
-            sg_config = self.client.authorize_security_group_ingress(
-                GroupId=self.sg_id,
-                IpPermissions=[
+            permissions = [
                     {
                         'IpProtocol':'tcp',
                         'FromPort':22,
@@ -67,6 +65,10 @@ class JupyterInstance:
                         'IpRanges':[{'CidrIp':'0.0.0.0/0'}]
                     },                    
                 ]
+            print(permissions)
+            sg_config = self.client.authorize_security_group_ingress(
+                GroupId=self.sg_id,
+                IpPermissions=permissions
             )
             print(sg_config)
 
