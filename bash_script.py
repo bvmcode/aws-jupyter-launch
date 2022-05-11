@@ -12,11 +12,13 @@ systemctl enable docker.socket
 sudo su ec2-user
 cd /home/ec2-user
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-sudo chmod +x /usr/local/bin/docker-compose
+sudo mv /usr/local/bin/docker-compose /usr/bin/docker-compose
+sudo chmod +x /usr/bin/docker-compose
 wget wget https://github.com/bvmcode/aws-jupyter-launch/archive/refs/heads/master.zip
 unzip master.zip
 mkdir /home/ec2-user/aws-jupyter-launch-master/notebooks
 sudo chmod 777 /home/ec2-user/aws-jupyter-launch-master/notebooks
+set +H
 echo "#!/bin/bash" >> jupyter_start.sh
 echo "cd /home/ec2-user/aws-jupyter-launch-master" >> jupyter_start.sh
 echo "export JUPYTER_PASSWD={passwd}" >> jupyter_start.sh
