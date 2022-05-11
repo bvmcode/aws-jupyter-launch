@@ -13,17 +13,17 @@ sudo su ec2-user
 cd /home/ec2-user
 sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
-wget https://github.com/pygeekr/jupyter-docker-aws/archive/refs/heads/master.zip
+wget wget https://github.com/bvmcode/aws-jupyter-launch/archive/refs/heads/master.zip
 unzip master.zip
-mkdir /home/ec2-user/jupyter-docker-aws-master/notebooks
-sudo chmod 777 /home/ec2-user/jupyter-docker-aws-master/notebooks
+mkdir /home/ec2-user/aws-jupyter-launch-master/notebooks
+sudo chmod 777 /home/ec2-user/aws-jupyter-launch-master/notebooks
 echo "#!/bin/bash" >> jupyter_start.sh
-echo "cd /home/ec2-user/jupyter-docker-aws-master" >> jupyter_start.sh
+echo "cd /home/ec2-user/aws-jupyter-launch-master" >> jupyter_start.sh
 echo "export JUPYTER_PASSWD={passwd}" >> jupyter_start.sh
 echo "export JUPYTER_PORT={port}" >> jupyter_start.sh
 echo "docker-compose up -d" >> jupyter_start.sh
 sudo chmod +x jupyter_start.sh
-cd /home/ec2-user/jupyter-docker-aws-master
+cd /home/ec2-user/aws-jupyter-launch-master
 export JUPYTER_PASSWD={passwd}
 export JUPYTER_PORT={port}
 docker-compose pull
