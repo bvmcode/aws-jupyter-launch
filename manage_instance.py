@@ -62,8 +62,8 @@ class JupyterInstance:
                     },
                     {
                         'IpProtocol':'tcp',
-                        'FromPort':8888,
-                        'ToPort': 8888,
+                        'FromPort':self.jupyter_port,
+                        'ToPort': self.jupyter_port,
                         'IpRanges':[{'CidrIp':'0.0.0.0/0'}]
                     },                    
                 ]
